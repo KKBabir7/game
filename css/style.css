@@ -1,0 +1,331 @@
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+  background: #1E2124;
+}
+
+a {
+  color: #ffb727;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffc85a;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 6px;
+  bottom: 6px;
+  z-index: 996;
+  background: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  transition: all 0.4s;
+  border: 1px solid rgba(200,200,200,0.3);
+}
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+  transition: all 0.2s ease;
+}
+.back-to-top:hover {
+color: #fff;
+  background: #FBB34E;
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  z-index: 997;
+  transition: all 0.5s;
+  height: 80px;
+  background: rgba(25, 28, 31, 0.8);
+}
+#header.header-transparent {
+  background: transparent;
+}
+#header.header-scrolled {
+  height: 60px;
+  background: rgba(25, 28, 31, 0.8);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar li {
+  position: relative;
+}
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 1000;
+  letter-spacing: 1px;
+}
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #FBB34E;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: block;
+  }
+  .navbar li{
+    display: inline-block;
+  }
+}
+@media (max-width: 341px) {
+  .navbar a, .navbar a:focus{
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/hero-bg.jpg") top right;
+  background-size: 120% 120%;
+  position: relative;
+   background-position: 90% 100%;
+   background-repeat: no-repeat;
+  animation: animatedBackground 10s linear infinite alternate;
+  image-rendering: -moz-crisp-edges;       
+  image-rendering:   -o-crisp-edges;       
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; 
+}
+
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 80% 90%;
+    background-size: 140% 140%;
+    
+  }
+  10% {
+    background-position: 50% 90%;
+    background-size: 135% 135%;
+  }
+  20% {
+    background-position: 30% 80%;
+    background-size: 130% 130%;
+   
+  }
+  30%{
+    background-position: 10% 70%;
+    background-size: 125% 125%;
+  }
+  40% {
+    background-position: 20% 60%;
+    background-size: 120% 120%;
+  }
+  50%{
+    background-position: 30% 50%;
+    background-size: 115% 115%;
+    
+  }
+  60% {
+    background-position: 50% 40%;
+    background-size: 110% 110%;
+  }
+  70%{
+    background-position: 70% 50%;
+    background-size: 105% 105%;
+    
+  }
+  80%{
+    background-position: 80% 70%;
+    background-size: 100% 100%;
+  }
+  90% {
+    background-position: 90% 70%;
+    background-size: 110% 110%;
+   
+  }
+100%{
+  background-position: 100% 100%;
+  background-size: 120% 120%;
+}
+
+
+}
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 255, 0.55);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 15px;
+}
+#hero img{
+   width: 400px;
+   image-rendering: -moz-crisp-edges;       
+    image-rendering:   -o-crisp-edges;       
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+}
+
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 439px) {
+  #hero img{
+    width: 300px;
+  }
+}
+
+@media (max-width: 341px) {
+  #hero img{
+    width: 250px;
+  }
+}
+
+/*--------------------------------------------------------------
+# our Services
+--------------------------------------------------------------*/
+.services,.discord {
+  background: #1E2124;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+.discord{
+  padding-bottom: 0px !important;
+}
+.services .section-title,.discord .section-title{
+  color: #fff;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.services .game-box{
+  background: #282B30;
+  padding-bottom: 20px;
+}
+.services .game-box .game-img{
+  width: 100%;
+  image-rendering: -moz-crisp-edges;       
+  image-rendering:   -o-crisp-edges;       
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; 
+  
+}
+
+.services .title {
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+
+}
+
+.services .description {
+  font-size: 12px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: center;
+  color: #fff;
+}
+.services .btn-primary{
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1px solid #7289DA;
+  background: #7289DA;
+  color: #fff;
+  font-size: 13px;
+  margin-top: 5px;
+  transition: all 0.2s ease;
+}
+.services .btn-primary:hover{
+  background: #282B30;
+  border: 1px solid #7289DA;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #1E2124;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 1px;
+  position: relative;
+}
+
+#footer .container {
+  position: relative;
+  
+}
